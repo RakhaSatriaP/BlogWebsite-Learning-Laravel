@@ -9,7 +9,7 @@
         <h2>
             <a href="/posts/{{ $item['slug'] }}">{{ $item["title"] }}</a>
         </h2>
-        <h5> By : {{ $item["author"] }}</h5>
+        <h5> By : <a href="#">{{ $item['user']['name'] ?? 'Unknown' }}</a> </h5>
         <p>{{ $item["excerpt"] }}.....<a href="/posts/{{ $item['slug'] }}"><i class="bi bi-substack"></i></a></p>
     </article>
     

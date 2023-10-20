@@ -12,14 +12,16 @@ class PostController extends Controller
     public function index(){
         return view('posts/posts',[
             "title" => "Blog",
-            "posts" => Post::all()
+            //mengambil semua data dari tabel post dan juga user
+            "posts"=> Post::all()->load('category','user'),
+            
         ]);
     }
 
     public function show(Post $post){
         return view('post',[
             "title" => "Single Post",
-            "post" => $post
+            "post" => $post,
         ]);
     }
 }
